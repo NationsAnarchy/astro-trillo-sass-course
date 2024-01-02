@@ -1,28 +1,54 @@
 ---
-import "../styles/main.scss"
+import { Image } from "astro:assets";
+import "../styles/main.scss";
+import logo from "../img/logo.png";
+import searchIcon from "../img/SVG/magnifying-glass.svg";
+import bookmarkIcon from "../img/SVG/bookmark.svg";
+import chatIcon from "../img/SVG/chat.svg";
+import userIcon from "../img/user.jpg";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>trillo &mdash; Your all-in-one booking app</title>
-	</head>
-	<body>
-		<div class="container">
-			<header class="header">
-				Header component
-			</header>
-			<div class="content">
-				<nav class="sidebar">
-					Navigation component
-				</nav>
-				<main class="hotel-view">
-					Hotel view component
-				</main>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>trillo &mdash; Your all-in-one booking app</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <Image src={logo} alt="Trillo logo" class="logo" />
+        <form class="search">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Search for a hotel"
+          />
+          <button class="search__button">
+            <Image src={searchIcon} alt="Search" class="search__icon" />
+          </button>
+        </form>
+        <nav class="user-nav">
+          <div class="user-nav__icon-box">
+            <Image src={bookmarkIcon} alt="User" class="user-nav__icon" />
+            <span class="user-nav__notification">7</span>
+          </div>
+          <div class="user-nav__icon-box">
+            <Image src={chatIcon} alt="Chat" class="user-nav__icon" />
+            <span class="user-nav__notification">13</span>
+          </div>
+          <div class="user-nav__user">
+            <Image src={userIcon} alt="User" class="user-nav__user-photo" />
+            <span class="user-nav__user-name">Jonas</span>
+          </div>
+        </nav>
+      </header>
+      <div class="content">
+        <nav class="sidebar">Navigation component</nav>
+        <main class="hotel-view">Hotel view component</main>
+      </div>
+    </div>
+  </body>
 </html>
