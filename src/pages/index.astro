@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import "../styles/main.scss";
 import logo from "../img/logo.png";
-import searchIcon from "../img/SVG/magnifying-glass.svg";
-import bookmarkIcon from "../img/SVG/bookmark.svg";
-import chatIcon from "../img/SVG/chat.svg";
 import userIcon from "../img/user.jpg";
 ---
 
@@ -27,16 +25,16 @@ import userIcon from "../img/user.jpg";
             placeholder="Search for a hotel"
           />
           <button class="search__button">
-            <Image src={searchIcon} alt="Search" class="search__icon" />
+            <Icon name="magnifying-glass" class="search__icon" />
           </button>
         </form>
         <nav class="user-nav">
           <div class="user-nav__icon-box">
-            <Image src={bookmarkIcon} alt="User" class="user-nav__icon" />
+            <Icon name="bookmark" class="user-nav__icon" />
             <span class="user-nav__notification">7</span>
           </div>
           <div class="user-nav__icon-box">
-            <Image src={chatIcon} alt="Chat" class="user-nav__icon" />
+            <Icon name="chat" class="user-nav__icon" />
             <span class="user-nav__notification">13</span>
           </div>
           <div class="user-nav__user">
@@ -48,22 +46,32 @@ import userIcon from "../img/user.jpg";
       <div class="content">
         <nav class="sidebar">
           <ul class="side-nav">
-            <li class="side-nav__item">
-              <a href="#" class="side-nav__link"><span>Hotels</span></a>
+            <li class="side-nav__item side-nav__item--active">
+              <a href="#" class="side-nav__link">
+                <Icon name="home" class="side-nav__icon" />
+                <span>Hotels</span>
+              </a>
             </li>
             <li class="side-nav__item">
-              <a href="#" class="side-nav__link"><span>Flights</span></a>
+              <a href="#" class="side-nav__link">
+                <Icon name="aircraft" class="side-nav__icon" />
+                <span>Flights</span>
+              </a>
             </li>
             <li class="side-nav__item">
-              <a href="#" class="side-nav__link"><span>Car rentals</span></a>
+              <a href="#" class="side-nav__link">
+                <Icon name="key" class="side-nav__icon" />
+                <span>Car rentals</span>
+              </a>
             </li>
             <li class="side-nav__item">
-              <a href="#" class="side-nav__link"><span>Tours</span></a>
+              <a href="#" class="side-nav__link">
+                <Icon name="map" class="side-nav__icon" />
+                <span>Tours</span>
+              </a>
             </li>
           </ul>
-          <div class="legal">
-            &copy; 2017 by trillo. All rights reserved.
-          </div>
+          <div class="legal">&copy; 2017 by trillo. All rights reserved.</div>
         </nav>
         <main class="hotel-view">Hotel view component</main>
       </div>
