@@ -4,6 +4,9 @@ import { Icon } from "astro-icon/components";
 import "../styles/main.scss";
 import logo from "../img/logo.png";
 import userIcon from "../img/user.jpg";
+import hotel1 from "../img/hotel-1.jpg";
+import hotel2 from "../img/hotel-2.jpg";
+import hotel3 from "../img/hotel-3.jpg";
 ---
 
 <html lang="en">
@@ -73,7 +76,37 @@ import userIcon from "../img/user.jpg";
           </ul>
           <div class="legal">&copy; 2017 by trillo. All rights reserved.</div>
         </nav>
-        <main class="hotel-view">Hotel view component</main>
+        <main class="hotel-view">
+          <div class="gallery">
+            <figure class="gallery__item">
+              <Image src={hotel1} alt="Hotel 1" class="gallery__photo" />
+            </figure>
+            <figure class="gallery__item">
+              <Image src={hotel2} alt="Hotel 2" class="gallery__photo" />
+            </figure>
+            <figure class="gallery__item">
+              <Image src={hotel3} alt="Hotel 3" class="gallery__photo" />
+            </figure>
+          </div>
+          <div class="overview">
+            <h1 class="overview__heading">Hotel Las Palmas</h1>
+            <div class="overview__stars">
+              <Icon name="star" class="overview__icon-star" />
+              <Icon name="star" class="overview__icon-star" />
+              <Icon name="star" class="overview__icon-star" />
+              <Icon name="star" class="overview__icon-star" />
+              <Icon name="star" class="overview__icon-star" />
+            </div>
+            <div class="overview__location">
+              <Icon name="location-pin" class="overview__icon-location" />
+              <button class="btn-inline">Albufera, Portugal</button>
+            </div>
+            <div class="overview__rating">
+              <div class="overview__rating-average">8.6</div>
+              <div class="overview__rating-count">429 votes</div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   </body>
